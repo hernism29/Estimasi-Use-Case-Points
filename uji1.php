@@ -10,7 +10,8 @@ echo "<br/>";
 
 print_r($dataset);
 $loop=count($dataset);
-
+$a = rand(0, 1);
+$b = rand(0, 1);
 for($i=0;$i<count($dataset);$i++){
 
 	for($j=0;$j<2;$j++){
@@ -18,10 +19,10 @@ for($i=0;$i<count($dataset);$i++){
 		echo "<br/>";
 		echo "dataset [".$i."][".$j."] = ".$dataset[$i][$j];
 		echo "<br/>";
-		$a = rand(0, 1);
+		
 		 
 		echo "<br/>";
-		$b = rand(0, 1);
+		
 		
 		// hitung
 		//kolom ke satu maka indeks ke 0 hitungnya
