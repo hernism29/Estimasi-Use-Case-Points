@@ -29,13 +29,9 @@ for($i=0;$i<count($dataset);$i++){
 	}
 	echo "dataset [".$i."][".$j."] = ".$dataset[$i][1];
 	echo "</br>";
-	echo "hitung SSE : 0.5 *".$Y_predict. "-" .$dataset[$i][1]."^ 2 =";
+	echo "hitung SSE : 0.5 * ( ".$Y_predict. "-" .$dataset[$i][1]." ) ^ 2 =";
 $sse = 0.5 * pow($Y_predict - $dataset[$i][1], 2);
 echo $sse;
 }
 
 ?>
-
-?>
-
-
