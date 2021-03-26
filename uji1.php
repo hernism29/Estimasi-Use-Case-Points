@@ -1,6 +1,6 @@
 <?php 
 echo "<table border = '1' width = '50%'>";
-echo "<tr><th>X</th><th>Y</th><th> a + b * X[i]</th><th>hitung SSE </th><th> Gradien a</th></tr>";
+echo "<tr><th>X</th><th>Y</th><th> a + b * X[i]</th><th>hitung SSE </th><th> Gradien a</th><th>Gradien b</th></tr>";
 $file_name = 'sholiq_dataset.txt';
 foreach (file($file_name) as $val) {
 	
@@ -40,12 +40,14 @@ for($i=0;$i<count($dataset);$i++){
 	echo "</br>";
 	echo "gradient_a : absolute(".($Y_predict - $dataset[$i][1]).") =";
 	echo $gradient_a = abs($Y_predict - $dataset[$i][1]);
-	echo "<tr><th>".$dataset[$i][0]."</th><th>".$dataset[$i][1]."</th><th>".$Y_predict."</th><th>
-	".$sse."</th><th>".$gradient_a."</th></tr>";
+	echo "</br>";
+	echo "gradient_b :(".$gradient_a.") *".$dataset[$i][0]." =";
+	echo $gradient_b = $gradient_a* $dataset[$i][0];
 
+	echo "<tr><th>".$dataset[$i][0]."</th><th>".$dataset[$i][1]."</th><th>".$Y_predict."</th><th>
+	".$sse."</th><th>".$gradient_a."</th><th>".$gradient_b."</th></tr>";
+	
 }
 
 echo "</table>";
-?>
-
 ?>
