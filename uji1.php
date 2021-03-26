@@ -1,6 +1,6 @@
 <?php 
 echo "<table border = '1' width = '50%'>";
-echo "<tr><th>X</th><th>Y</th><th> a * b * X[i]</th><th>hitung SSE </th><th> Gradien a</th></tr>";
+echo "<tr><th>X</th><th>Y</th><th> a + b * X[i]</th><th>hitung SSE </th><th> Gradien a</th></tr>";
 $file_name = 'sholiq_dataset.txt';
 foreach (file($file_name) as $val) {
 	
