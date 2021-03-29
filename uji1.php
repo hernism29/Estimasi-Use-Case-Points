@@ -12,6 +12,43 @@ foreach (file($file_name) as $val) {
 
 print_r($dataset);
 $loop=count($dataset);
+
+for($i=0;$i<count($dataset);$i++){
+	$a = rand(0, 1);
+$b = rand(0, 1);
+
+	for($j=0;$j<1;$j++){
+		echo "<br/>";
+		echo "<br/>";
+		
+		echo "dataset [".$i."][".$j."] = ".$dataset[$i][$j];
+		echo "<br/>";	
+		$x=$dataset[$i][0]; 
+		
+		// hitung
+		//kolom ke satu maka indeks ke 0 hitungnya
+		echo "hitung ".$a."+".$b."*".$dataset[$i][0]."=";
+		echo $Y_predict = $a + $b * $dataset[$i][0];
+		echo "</br>";
+		echo "</br>";
+
+	}
+	echo "dataset [".$i."][".$j."] = ".$dataset[$i][1];
+	echo "</br>";
+	echo "hitung SSE : 0.5 * ( ".$Y_predict. "-" .$dataset[$i][1]." ) ^ 2 =";
+	echo $sse = 0.5 * pow($Y_predict - $dataset[$i][1], 2);
+	echo "</br>";
+	echo "gradient_a : absolute(".($Y_predict - $dataset[$i][1]).") =";
+	echo $gradient_a = abs($Y_predict - $dataset[$i][1]);
+	echo "</br>";
+	echo "gradient_b :(".$gradient_a.") *".$dataset[$i][0]." =";
+	echo $gradient_b = $gradient_a* $dataset[$i][0];
+	
+}
+echo "</br>";
+echo "___________________________________________________________________________________";
+echo "___________________________________________________________________________________";
+
 $a = rand(0, 1);
 $b = rand(0, 1);
 
