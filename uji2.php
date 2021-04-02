@@ -23,20 +23,35 @@ echo "</br>";
 echo "Error = ".$error;
 echo "</br>";
 for ($i=0; $i<= 20 ; $i++) { 
+	
 	$a[$i] = (float) rand() / (float) getrandmax();
 	$b[$i] = (float) rand() / (float) getrandmax();
+	$Y_predict = $a[$i] + $b[$i] * 0.88198757763975;
+	$error =  $Y_predict - 0.88198757763975;
+
 echo "</br>";
-	if ($i == 0) {
-	echo 'Iterasi: '.$i.' a now: '.$a[$i].' b now: '.$b[$i].'<br>';	
-	}
+if ($i == 0) {
+	echo "nilai Y Predict: ".$Y_predict; 
+	echo "&nbsp";
+	echo "Error: ".$error ;
+	echo "</br>";
+	echo 'Iterasi: '.$i.' a now: '.$a[$i].' b now: '.$b[$i].'<br>';
+	
+}
 	if ($i != 0){
 		echo "</br>";
+		echo "nilai Y Predict: ".$Y_predict; 
+		echo "&nbsp";
+		echo "Error: ".$error ;
+		echo "</br>";
 		echo 'Iterasi: '.$i.' a now: '.$a[$i-1].' b now: '.$b[$i-1].'<br>';		
-	}	
+	}
+	
 	$a[$i] = $a[$i] - $r * $error;
 	$b[$i] = $b[$i] - $r * $error;
 	echo 'a update: '.$a[$i].' b update: '.$b[$i];
 	 
 	}	
-?>
 
+
+?>
